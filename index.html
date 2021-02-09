@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors!</title>
+</head>
+<body>
+  
+  <script>
+    let comp = ['r','p','s']
+    let wins = 0
+    let losses = 0
+    let ties = 0
+    let miss = 0
+    for (let i=0; i<10; i++) {
+      let compSel = comp[Math.floor(Math.random()*comp.length)]
+      let userSel = prompt('Choose rock paper or scissors! (r, p, or s)')
+      if (compSel == 'r' && userSel =='r') {
+        alert('The computer chose r!')
+        alert("It's a tie!")
+        ties++
+      } else if (compSel == 'r' && userSel == 'p') {
+        alert('The computer chose r!')
+        alert('You win :D')
+        wins++
+      } else if (compSel == 'r' && userSel == 's') {
+        alert('The computer chose r!')
+        alert('You lose :(')
+        losses++
+      } else if(compSel == 'p' && userSel == 'p') {
+        alert('The computer chose p!')
+        alert("It's a tie!")
+        ties++
+      } else if (compSel == 'p' && userSel == 'r') {
+        alert('The computer chose p!')
+        alert('You lose :(')
+        losses++
+      } else if (compSel == 'p' && userSel == 's') {
+        alert('The computer chose p!')
+        alert('You win :D')
+        wins++
+      } else if (compSel == 's' && userSel == 's') {
+        alert('The computer chose s!')
+        alert("It's a tie!")
+        ties++
+      } else if (compSel == 's' && userSel == 'p') {
+        alert('The computer chose s!')
+        alert('You lose :(')
+        losses++
+      } else if (compSel == 's' && userSel == 'r') {
+        alert('The computer chose s!')
+        alert('You win :D')
+        wins++
+      } else {
+        alert('Make sure you input a correct input!')
+        miss++
+      }
+    }
+    alert('Results:\nWins: '+wins+'\nLosses: '+losses+'\nTies: '+ties+'\nWrong Input: '+miss)
+  </script>
+</body>
+</html>
